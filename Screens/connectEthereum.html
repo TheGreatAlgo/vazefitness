@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<script>
+
+function checkform() {
+   var x = document.getElementById("alertBox");
+    if(document.registerForm.ethereumWalletAddress.value.length != '42')
+        {
+        x.style.display ="block";
+        x.textContent = "Please Enter a Proper Ethereum Address";
+        return false;
+        }
+    else if ((document.registerForm.timeFrame.value != "1d") && (document.registerForm.timeFrame.value != "7d") && (document.registerForm.timeFrame.value != "30d") )
+        {
+        x.style.display ="block";
+        x.textContent = "Please Enter 1d, 7d, or 30d";
+        return false;
+        }
+    else if(document.registerForm.heartBeatZone.value != "fatburn" && document.registerForm.heartBeatZone.value != "cardio"  && document.registerForm.heartBeatZone.value != "peak")
+        {
+        x.style.display ="block";
+        x.textContent = "Please Enter fatburn, cardio, or peak";
+        return false;
+        }
+  else if(document.registerForm.contractDuration.value != "2m"  && document.registerForm.contractDuration.value != "6m"  && document.registerForm.contractDuration.value != "12m")
+        {
+        x.style.display ="block";
+        x.textContent = "Please Enter 2m, 6m, or 12m";
+        return false;
+        }
+
+ else {
+        document.registerForm.submit();
+    }
+}
+
+
+</script>
+
+<html lang="en">
+
+<!-- <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  This is an alert box.
+</div> -->
+
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel = "stylesheet" type = "text/css" href = "styles/styles.css" />
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.header a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+body {
+  background-image: url('../images/crackedWall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+</style>
+
+<body>
+
+
+  <div class="header">
+    <div>
+    <img src="../images/VAZEFitness.png" style='vertical-align:middle;' width="480" height="80"  alt="VazeLogo"/>
+    <img src="../images/chainlinkPowered.png" style='vertical-align:middle; float:right; padding-right: 10px;' width="450" height="80" alt="ChainlinkLogo"/>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="./dashboard" class="left">Dashboard</a>
+    <a href="./wallet" class="left">Wallet</a>
+    <a href="./deploy" class="left">Deploy</a>
+    <a href="./deployedContracts" class="left">Contracts</a>
+    <a href="./logout" class="right">Logout</a>
+  </div>
+
+<div  class="login-page">
+
+  <div  class="form">
+    <div class="alert" id="alertBox">
+      <span id= "closebtn" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+
+    </div>
+    <form name="deployEthereum" class="register-form" action="/auth-ethereum" method="post">
+      <input type="text" name="ethereumWalletAddress" placeholder="Ethereum Wallet Address" required>
+       <input type="text" name="timeFrame" placeholder="TimeFrame (1d, 7d, or 30d)" required>
+       <input type="text" name="heartBeatZone" placeholder="HeartBeat Zone (Cardio, Peak, etc)" required>
+       <input type="text" name="contractDuration" placeholder="Duration of Contract (2m, 6m, or 12m)" required>
+      <button onClick="return checkform();">Deploy</button>
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="./aboutus">About Us</a>
+  <a href="./privacypolicy">Privacy Policy</a>
+  <a href="./termsofuse">Terms of Use</a>
+  <a href="./contactus">Contact Us</a>
+  <b class="right">&copy; 2020 Vaze Audio Fitness, All Rights Reserved</b>
+</div>
+
+
+
+</body>
+</html>

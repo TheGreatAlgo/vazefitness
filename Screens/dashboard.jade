@@ -1,0 +1,132 @@
+doctype html
+html(lang='en')
+  head
+    title
+      | Vaze Fitness Login
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='shortcut icon', type='image/x-icon', href='images/favicon.ico')
+    link(rel='stylesheet', type='text/css', href='styles/styles.css')
+    style.
+      * {
+      box-sizing: border-box;
+      }
+      .header a{
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      }
+      .textboxconnect p {
+      text-align: center;
+      display: block;
+      font-family: Helvetica;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: none;
+      color: #000000;
+      position: relative;
+      background-color: #ffffff;
+      padding: 0% 0 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      }
+      .column {
+      float: left;
+      width: 50%;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+  body
+    .header
+      div
+        img(src='../images/VAZEFitness.png', style='vertical-align:middle;', width='480', height='80', alt='VazeLogo')
+        img(src='../images/chainlinkPowered.png', style='vertical-align:middle; float:right; padding-right: 10px;', width='450', height='80', alt='ChainlinkLogo')
+    .navbar
+      a.left(href='./dashboard') Dashboard
+      a.left(href='./wallet') Wallet
+      a.left(href='./deploy') Deploy
+      a.left(href='./deployedContracts') Contracts
+      a.right(href='./logout') Logout
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript').
+      google.charts.load("current", {packages:['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+      ['Date (Past 30 Days)', 'Out Of Range', 'Fat Burn', 'Cardio', 'Peak'],
+        ['#{heartData[0].Date}', #{heartData[0].outOfRange}, #{heartData[0].fatBurn}, #{heartData[0].cardio}, #{heartData[0].peak}],
+        ['#{heartData[1].Date}', #{heartData[1].outOfRange}, #{heartData[1].fatBurn}, #{heartData[1].cardio}, #{heartData[1].peak}],
+        ['#{heartData[2].Date}', #{heartData[2].outOfRange}, #{heartData[2].fatBurn}, #{heartData[2].cardio}, #{heartData[2].peak}],
+        ['#{heartData[3].Date}', #{heartData[3].outOfRange}, #{heartData[3].fatBurn}, #{heartData[3].cardio}, #{heartData[3].peak}],
+        ['#{heartData[4].Date}', #{heartData[4].outOfRange}, #{heartData[4].fatBurn}, #{heartData[4].cardio}, #{heartData[4].peak}],
+        ['#{heartData[5].Date}', #{heartData[5].outOfRange}, #{heartData[5].fatBurn}, #{heartData[5].cardio}, #{heartData[5].peak}],
+        ['#{heartData[6].Date}', #{heartData[6].outOfRange}, #{heartData[6].fatBurn}, #{heartData[6].cardio}, #{heartData[6].peak}],
+        ['#{heartData[7].Date}', #{heartData[7].outOfRange}, #{heartData[7].fatBurn}, #{heartData[7].cardio}, #{heartData[7].peak}],
+        ['#{heartData[8].Date}', #{heartData[8].outOfRange}, #{heartData[8].fatBurn}, #{heartData[8].cardio}, #{heartData[8].peak}],
+        ['#{heartData[9].Date}', #{heartData[9].outOfRange}, #{heartData[9].fatBurn}, #{heartData[9].cardio}, #{heartData[9].peak}],
+        ['#{heartData[10].Date}', #{heartData[10].outOfRange}, #{heartData[10].fatBurn}, #{heartData[10].cardio}, #{heartData[10].peak}],
+        ['#{heartData[11].Date}', #{heartData[11].outOfRange}, #{heartData[11].fatBurn}, #{heartData[11].cardio}, #{heartData[11].peak}],
+        ['#{heartData[12].Date}', #{heartData[12].outOfRange}, #{heartData[12].fatBurn}, #{heartData[12].cardio}, #{heartData[12].peak}],
+        ['#{heartData[13].Date}', #{heartData[13].outOfRange}, #{heartData[13].fatBurn}, #{heartData[13].cardio}, #{heartData[13].peak}],
+        ['#{heartData[14].Date}', #{heartData[14].outOfRange}, #{heartData[14].fatBurn}, #{heartData[14].cardio}, #{heartData[14].peak}],
+        ['#{heartData[15].Date}', #{heartData[15].outOfRange}, #{heartData[15].fatBurn}, #{heartData[15].cardio}, #{heartData[15].peak}],
+        ['#{heartData[16].Date}', #{heartData[16].outOfRange}, #{heartData[16].fatBurn}, #{heartData[16].cardio}, #{heartData[16].peak}],
+        ['#{heartData[17].Date}', #{heartData[17].outOfRange}, #{heartData[17].fatBurn}, #{heartData[17].cardio}, #{heartData[17].peak}],
+        ['#{heartData[18].Date}', #{heartData[18].outOfRange}, #{heartData[18].fatBurn}, #{heartData[18].cardio}, #{heartData[18].peak}],
+        ['#{heartData[19].Date}', #{heartData[19].outOfRange}, #{heartData[19].fatBurn}, #{heartData[19].cardio}, #{heartData[19].peak}],
+        ['#{heartData[20].Date}', #{heartData[20].outOfRange}, #{heartData[20].fatBurn}, #{heartData[20].cardio}, #{heartData[20].peak}],
+        ['#{heartData[21].Date}', #{heartData[21].outOfRange}, #{heartData[21].fatBurn}, #{heartData[21].cardio}, #{heartData[21].peak}],
+        ['#{heartData[22].Date}', #{heartData[22].outOfRange}, #{heartData[22].fatBurn}, #{heartData[22].cardio}, #{heartData[22].peak}],
+        ['#{heartData[23].Date}', #{heartData[23].outOfRange}, #{heartData[23].fatBurn}, #{heartData[23].cardio}, #{heartData[23].peak}],
+        ['#{heartData[24].Date}', #{heartData[24].outOfRange}, #{heartData[24].fatBurn}, #{heartData[24].cardio}, #{heartData[24].peak}],
+        ['#{heartData[25].Date}', #{heartData[25].outOfRange}, #{heartData[25].fatBurn}, #{heartData[25].cardio}, #{heartData[25].peak}],
+        ['#{heartData[26].Date}', #{heartData[26].outOfRange}, #{heartData[26].fatBurn}, #{heartData[26].cardio}, #{heartData[26].peak}],
+        ['#{heartData[27].Date}', #{heartData[27].outOfRange}, #{heartData[27].fatBurn}, #{heartData[27].cardio}, #{heartData[27].peak}],
+        ['#{heartData[28].Date}', #{heartData[28].outOfRange}, #{heartData[28].fatBurn}, #{heartData[28].cardio}, #{heartData[28].peak}],
+        ['#{heartData[29].Date}', #{heartData[29].outOfRange}, #{heartData[29].fatBurn}, #{heartData[29].cardio}, #{heartData[29].peak}]
+        ]);
+      var view = new google.visualization.DataView(data);
+      // view.setColumns([0, 1,
+      //                  { calc: "stringify",
+      //                    sourceColumn: 1,
+      //                    type: "string",
+      //                    role: "annotation" },
+      //                  2]);
+      var options = {
+      title: 'Heart Rate Data for the Past Thirty Days',
+      //       width: 2000,
+      height: 400,
+      legend: { position: 'top', maxLines: 1 },
+      bar: { groupWidth: '20%' },
+      isStacked: true,
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+      }
+    #columnchart_values(style='width: 100%; height: 100%;')
+    .row
+      .column
+        .textboxconnect
+          p User Information:
+        .info-block-spec
+          .flex-container
+            div
+              .textboxconnect
+                p User ID:
+                p #{userData}
+    .footer
+      a(href='./aboutus') About Us
+      a(href='./privacypolicy') Privacy Policy
+      a(href='./termsofuse') Terms of Use
+      a(href='./contactus') Contact Us
+      b.right © 2020 Vaze Audio Fitness, All Rights Reserved

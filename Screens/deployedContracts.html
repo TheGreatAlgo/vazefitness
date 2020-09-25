@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Vaze Fitness Login
+
+</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel = "stylesheet" type = "text/css" href = "styles/styles.css" />
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.header a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.textboxconnect p {
+text-align: center;
+display: block;
+font-family: Helvetica;
+font-size: 22px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-transform: none;
+color: #000000;
+position: relative;
+background-color: #ffffff;
+padding: 0% 0 0;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+
+
+  <div class="header">
+    <div>
+    <img src="../images/VAZEFitness.png" style='vertical-align:middle;' width="480" height="80"  alt="VazeLogo"/>
+    <img src="../images/chainlinkPowered.png" style='vertical-align:middle; float:right; padding-right: 10px;' width="450" height="80" alt="ChainlinkLogo"/>
+    </div>
+  </div>
+
+<div class="navbar">
+  <a href="./dashboard" class="left">Dashboard</a>
+  <a href="./wallet" class="left">Wallet</a>
+  <a href="./deploy" class="left">Deploy</a>
+  <a href="./deployedContracts" class="left">Contracts</a>
+  <a href="./logout" class="right">Logout</a>
+</div>
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['table']});
+    google.charts.setOnLoadCallback(drawTable);
+
+    function drawTable() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Contract Address');
+      data.addColumn('string', 'Transaction Hash');
+      data.addColumn('string', 'Block Number');
+      data.addColumn('string', 'Network');
+
+      data.addRows([['0xef379057F8caF24C3f8efE79Ebfae7f14da6ac3A', '0x981395d9f869d2a4573a474b54d50fe7eca299acf0857e01e107e13385c160c3', '20939480','Ethereum: Kovan Testnet']]);
+
+      var table = new google.visualization.Table(document.getElementById('table_div'));
+
+      table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+    }
+  </script>
+</head>
+
+
+</body>
+
+<div class="textboxconnect">
+<p>User Deployed Contracts</p>
+</div>
+  <div id="table_div" style="width: 100%; height: 100%;"></div>
+
+
+
+
+
+
+<div class="footer">
+  <a href="./aboutus">About Us</a>
+  <a href="./privacypolicy">Privacy Policy</a>
+  <a href="./termsofuse">Terms of Use</a>
+  <a href="./contactus">Contact Us</a>
+  <b class="right">&copy; 2020 Vaze Audio Fitness, All Rights Reserved</b>
+</div>
+
+
+</body>
+</html>

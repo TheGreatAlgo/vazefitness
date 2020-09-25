@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+// get the url
+var url = window.location.href;
+//getting the access token from url
+var access_token = url.split("#")[1].split("=")[1].split("&")[0];
+// get the userid
+var userId = url.split("#")[1].split("=")[2].split("&")[0];
+console.log(access_token);
+console.log(userId);
+</script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel = "stylesheet" type = "text/css" href = "styles/styles.css" />
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.header a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.connectStatus p {
+text-align: center;
+display: block;
+font-family: Helvetica;
+font-size: 22px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-transform: none;
+color: #000000;
+position: relative;
+background-color: #ffffff;
+padding: 4% 0 0;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+}
+
+body{
+     background:#111;
+     background-image: url('../images/crackedWall.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     color:#ddd;
+     font-weight:300;
+     font-family: 'Source Sans Pro', sans-serif;
+   }
+   body > .container{
+     position:relative;
+     width:100%;
+     height:100%;
+     z-index:40;
+   }
+
+
+}
+
+body::before{
+   background-size:100% 100%;
+   height:1px;
+   top:1px;
+   background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.74) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+   background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(25%,rgba(255,255,255,0.74)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0)));
+   background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+   background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+   background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+   background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.74) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+}
+
+.loader{
+       position:absolute;
+       width:320px;
+       height:240px;
+       left:50%;
+       top:50%;
+       margin-left:-160px;
+       margin-top:-120px;
+       border-radius:4px;
+       transition:opacity 400ms;
+}
+
+@keyframes pulse{
+   0%{
+     height:0%;
+     box-shadow:0 0 4px rgba(0,0,0,1.0);
+   }
+   20%{
+     background:rgba(255,255,255,0.5);
+     height:100%;
+     box-shadow:0 0 8px rgba(255,255,255,0.0);
+   }
+   50%{
+     background:rgba(17,217,255,1);
+     box-shadow:0 0 8px rgba(17,217,255,0.8);
+   }
+   80%{
+     background:rgba(255,255,255,0.5);
+     height:100%;
+     box-shadow:0 0 8px rgba(255,255,255,0.0);
+   }
+   100%{
+     height:0%;
+     box-shadow:0 0 4px rgba(0,0,0,1.0);
+   }
+}
+
+.loader > ul{
+   list-style:none;
+   position:absolute;
+   width:120px;
+   height:120px;
+   left:50%;
+   top:50%;
+   margin:-60px -80px;
+}
+
+.loader li{
+width:4px;
+height:30px;
+border-radius:2px;
+background:#050505;
+position:absolute;
+left:65%;
+top:0px;
+margin-left:-2px;
+transform-origin:2px 50px;
+   box-shadow:1px 0 0 rgba(255,255,255,0.1);
+}
+
+.loader li div{
+   border-radius:2px;
+   width:4px;
+   background:rgba(255,255,255,0.5);
+   position:absolute;
+   bottom:0px;
+   left:0px;
+   animation:pulse 6s normal infinite;
+}
+
+ul>li:nth-of-type(1){
+transform:rotate(0deg);
+box-shadow:0 1px 0 rgba(255,255,255,0.1);
+}
+
+ul>li:nth-of-type(1)>div{
+animation-delay:100ms;
+}
+
+ul>li:nth-of-type(2){
+transform:rotate(30deg);
+}
+
+ul>li:nth-of-type(2)>div{
+animation-delay:200ms;
+}
+
+
+ul>li:nth-of-type(3){
+transform:rotate(60deg);
+}
+
+ul>li:nth-of-type(3)>div{
+animation-delay:300ms;
+}
+
+
+ul>li:nth-of-type(4){
+transform:rotate(90deg);
+}
+
+ul>li:nth-of-type(4)>div{
+animation-delay:400ms;
+}
+
+
+ul>li:nth-of-type(5){
+transform:rotate(120deg);
+}
+
+ul>li:nth-of-type(5)>div{
+animation-delay:500ms;
+}
+
+
+ul>li:nth-of-type(6){
+transform:rotate(150deg);
+}
+
+ul>li:nth-of-type(6)>div{
+animation-delay:600ms;
+}
+
+
+ul>li:nth-of-type(7){
+transform:rotate(180deg);
+box-shadow:0 -1px 0 rgba(255,255,255,0.1);
+}
+
+ul>li:nth-of-type(7)>div{
+animation-delay:700ms;
+}
+
+
+ul>li:nth-of-type(8){
+transform:rotate(210deg);
+box-shadow:-1px 0 0 rgba(255,255,255,0.1);
+}
+
+ul>li:nth-of-type(8)>div{
+ animation-delay:800ms;
+}
+
+
+ul>li:nth-of-type(9){
+transform:rotate(240deg);
+box-shadow:-1px 0 0 rgba(255,255,255,0.1);
+}
+ul>li:nth-of-type(9)>div{
+animation-delay:900ms;
+}
+
+
+ul>li:nth-of-type(10){
+transform:rotate(270deg);
+box-shadow:-1px 0 0 rgba(255,255,255,0.1);
+}
+ul>li:nth-of-type(10)>div{
+animation-delay:1000ms;
+}
+
+
+
+ul>li:nth-of-type(11){
+transform:rotate(300deg);
+box-shadow:-1px 0 0 rgba(255,255,255,0.1);
+}
+
+ul>li:nth-of-type(11)>div{
+animation-delay:1100ms;
+}
+
+
+ul>li:nth-of-type(12){
+transform:rotate(330deg);
+box-shadow:-1px 0 0 rgba(255,255,255,0.1);
+}
+
+ul>li:nth-of-type(12)>div{
+animation-delay:1200ms;
+}
+.loader{
+background: rgb(5,5,5);
+background: -moz-linear-gradient(45deg,  rgba(5,5,5,1) 0%, rgba(16,16,16,1) 100%);
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(5,5,5,1)), color-stop(100%,rgba(16,16,16,1)));
+background: -webkit-linear-gradient(45deg,  rgba(5,5,5,1) 0%,rgba(16,16,16,1) 100%);
+background: -o-linear-gradient(45deg,  rgba(5,5,5,1) 0%,rgba(16,16,16,1) 100%);
+background: -ms-linear-gradient(45deg,  rgba(5,5,5,1) 0%,rgba(16,16,16,1) 100%);
+background: linear-gradient(45deg,  rgba(5,5,5,1) 0%,rgba(16,16,16,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050505', endColorstr='#101010',GradientType=1 );
+
+   position:absolute;
+   width:320px;
+   height:240px;
+   left:50%;
+   top:50%;
+   margin-left:-160px;
+   margin-top:-120px;
+   border-radius:4px;
+   background: #FFFFFF;
+   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+   /*box-shadow:0 0 4px 0px rgba(0,0,0,0.6),inset 0px 1px 0px #000,inset 0px -1px 0px #000,inset 1px 0px 0px #000,inset -1px 0px 0px #000;*/
+}
+
+.loader::after{
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 49%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.03)), color-stop(49%,rgba(255,255,255,0.03)), color-stop(50%,rgba(255,255,255,0.02)), color-stop(100%,rgba(255,255,255,0.02)));
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.03) 49%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.02) 100%);
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.03) 49%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.02) 100%);
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.03) 49%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.02) 100%);
+background: radial-gradient(ellipse at center,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.03) 49%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.02) 100%);
+   position:absolute;
+   width:100%;
+   height:100%;
+   background-size:200% 240%;
+   top:0px;
+   left:0px;
+   z-index:4;
+   content:' ';
+}
+
+.loader h4{
+  text-align:center;
+  width:100%;
+  position:absolute;
+  bottom:0px;
+
+  font-family:"Roboto", sans-serif; /*'Source Sans',sans-serif;*/
+  font-weight:300;
+  color:black;
+}
+
+</style>
+
+<body>
+
+
+  <div class="header">
+    <div>
+    <img src="../images/VAZEFitness.png" style='vertical-align:middle;' width="480" height="80"  alt="VazeLogo"/>
+    <img src="../images/chainlinkPowered.png" style='vertical-align:middle; float:right; padding-right: 10px;' width="450" height="80" alt="ChainlinkLogo"/>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="./dashboard" class="left">Dashboard</a>
+    <a href="./wallet" class="left">Wallet</a>
+    <a href="./deploy" class="left">Deploy</a>
+    <a href="./deployedContracts" class="left">Contracts</a>
+  <a href="./logout" class="right">Logout</a>
+  </div>
+
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+  <div class="loader">
+      <ul>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+          <li><div></div></li>
+      </ul>
+      <h4>Please wait: Smart Contract Deploying</h4>
+  </div>
+
+
+
+<div class="footer">
+  <a href="./aboutus">About Us</a>
+  <a href="./privacypolicy">Privacy Policy</a>
+  <a href="./termsofuse">Terms of Use</a>
+  <a href="./contactus">Contact Us</a>
+  <b class="right">&copy; 2020 Vaze Audio Fitness, All Rights Reserved</b>
+</div>
+
+</body>
+</html>

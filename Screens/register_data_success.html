@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+// get the url
+var url = window.location.href;
+//getting the access token from url
+var access_token = url.split("#")[1].split("=")[1].split("&")[0];
+// get the userid
+var userId = url.split("#")[1].split("=")[2].split("&")[0];
+console.log(access_token);
+console.log(userId);
+</script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel = "stylesheet" type = "text/css" href = "styles/styles.css" />
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.header a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.connectStatus p {
+text-align: center;
+display: block;
+font-family: Helvetica;
+font-size: 22px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-transform: none;
+color: #000000;
+position: relative;
+background-color: #ffffff;
+padding: 4% 0 0;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+}
+</style>
+
+<body>
+
+
+  <div class="header">
+    <div>
+    <img src="../images/VAZEFitness.png" style='vertical-align:middle;' width="480" height="80"  alt="VazeLogo"/>
+    <img src="../images/chainlinkPowered.png" style='vertical-align:middle; float:right; padding-right: 10px;' width="450" height="80" alt="ChainlinkLogo"/>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <a href="./dashboard" class="left">Dashboard</a>
+    <a href="./wallet" class="left">Wallet</a>
+    <a href="./deploy" class="left">Deploy</a>
+    <a href="./logout" class="right">Logout</a>
+  </div>
+
+<div  class="login-page">
+  <div  class="form">
+    <div  class="connectStatus">
+    <p>Success!</p>
+    </div>
+  <img src="../images/greencheck.png" width="50" height="50"  alt="success" style="vertical-align:middle;margin:0px 10px"/>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="./aboutus">About Us</a>
+  <a href="./privacypolicy">Privacy Policy</a>
+  <a href="./termsofuse">Terms of Use</a>
+  <a href="./contactus">Contact Us</a>
+  <b class="right">&copy; 2020 Vaze Audio Fitness, All Rights Reserved</b>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel = "stylesheet" type = "text/css" href = "styles/footer.css" />
+<title>Vaze Fitness</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+
+.header {
+  padding: 1px;
+  text-align: left;
+  background: #252B30;
+  color: white;
+
+
+  /* padding: 20px; */
+}
+
+.header a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #243345; /*252B30 */
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #1F618D;
+  color: white;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #1F618D;
+  color: white;
+}
+
+/* Column container */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+/* .side {
+  -ms-flex: 30%;
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+} */
+
+.flex-container {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  -ms-flex: 100%; /* IE10 */
+  flex: 100%;
+  padding: 20px;
+  overflow: hidden;
+  background-color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+
+.main c {
+
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  justify-content: center;
+}
+
+
+
+
+
+
+/* Footer */
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+body {
+  background-image: url('../images/crackedWall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+</style>
+
+<div class="header">
+  <div>
+  <img src="../images/VAZEFitness.png" style='vertical-align:middle;' width="480" height="80"  alt="VazeLogo"/>
+  <img src="../images/chainlinkPowered.png" style='vertical-align:middle; float:right; padding-right: 10px;' width="450" height="80" alt="ChainlinkLogo"/>
+  </div>
+</div>
+
+<body>
+
+</head>
+
+
+
+
+<div class="navbar">
+  <a href="/" class="left">Home</a>
+  <a href="./login" class="right">Login</a>
+  <a href="./register" class="right">Register</a>
+</div>
+
+
+
+<div class="flex-container">
+  <div>
+    <h1>Workout</h1>
+    <img src="../images/fitness.png" width="160" height="160"  alt="Fitbit"/>
+  </div>
+
+  <div>
+    <h1 >Sync</h1>
+    <img src="../images/connect.png" width="160" height="160"  alt="Fitbit"/>
+  </div>
+
+  <div>
+     <h1 >Connect</h1>
+    <img src="../images/contract.png" width="160" height="160"  alt="Fitbit"/>
+  </div>
+</div>
+
+<div class="flex-container">
+  <div>
+    <h1>Currently Supporting:</h1>
+  </div>
+
+</div>
+  <div class="flex-container">
+    <div>
+      <img src="../images/fitbit1.png" width="320" height="84"  alt="Fitbit"/>
+    </div>
+</div>
+
+<div class="flex-container">
+  <div>
+    <h1>Support Coming Soon For:</h1>
+  </div>
+</div>
+
+</div>
+  <div class="flex-container">
+    <div>
+      <img src="../images/apple.png" width="297" height="70"  alt="Apple"/>
+    </div>
+</div>
+
+
+
+<div class="footer">
+  <a href="./aboutus">About Us</a>
+  <a href="./privacypolicy">Privacy Policy</a>
+  <a href="./termsofuse">Terms of Use</a>
+  <a href="./contactus">Contact Us</a>
+  <b class="right">&copy; 2020 Vaze Audio Fitness, All Rights Reserved</b>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<script>
+
+function checkform() {
+   var x = document.getElementById("alertBox");
+    if(document.registerForm.username.value == "")
+        {
+        x.style.display ="block";
+        x.textContent = "Please Enter a Username";
+        return false;
+        }
+    else if (document.registerForm.password.value == "")
+        {
+        x.style.display ="block";
+        x.textContent = "Please Enter a Password";
+        return false;
+        }
+    else if(document.registerForm.confirmPassword.value == "")
+        {
+        x.style.display ="block";
+        x.textContent = "Please Confirm Password";
+        return false;
+        }
+    else if(document.registerForm.emailAddress.value == "")
+        {
+        x.style.display ="block";
+        x.textContent = "Please Enter an Email Address";
+        return false;
+        }
+    else if(document.registerForm.password.value != document.registerForm.confirmPassword.value)
+        {
+        x.style.display ="block";
+        x.textContent = "Passwords do not match";
+        return false;
+        }
+ else {
+        document.registerForm.submit();
+    }
+}
+
+
+</script>
+
+<html lang="en">
+
+<!-- <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  This is an alert box.
+</div> -->
+
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel = "stylesheet" type = "text/css" href = "styles/styles.css" />
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.header a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+body {
+  background-image: url('../images/crackedWall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
+
+<body>
+
+
+  <div class="header">
+    <div>
+    <img src="../images/VAZEFitness.png" style='vertical-align:middle;' width="480" height="80"  alt="VazeLogo"/>
+    <img src="../images/chainlinkPowered.png" style='vertical-align:middle; float:right; padding-right: 10px;' width="450" height="80" alt="ChainlinkLogo"/>
+    </div>
+  </div>
+
+<div class="navbar">
+  <a href="/" class="left">Home</a>
+  <a href="./login" class="right">Login</a>
+  <a href="./register" class="right">Register</a>
+</div>
+
+<div  class="login-page">
+
+  <div  class="form">
+    <div class="alert" id="alertBox">
+      <span id= "closebtn" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+
+    </div>
+    <form name="registerForm" class="register-form" action="/register" method="post">
+      <input type="text" placeholder="name" name="username"/>
+      <input type="password" placeholder="password" name="password"/>
+      <input type="password" placeholder="confirm password" name="confirmPassword"/>
+      <input type="email" placeholder="email address" name="emailAddress"/>
+      <button onClick="return checkform();">create</button>
+      <p class="message">Already registered? <a href="./login">Sign In</a></p>
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="./aboutus">About Us</a>
+  <a href="./privacypolicy">Privacy Policy</a>
+  <a href="./termsofuse">Terms of Use</a>
+  <a href="./contactus">Contact Us</a>
+  <b class="right">&copy; 2020 Vaze Audio Fitness, All Rights Reserved</b>
+</div>
+
+
+
+</body>
+</html>
